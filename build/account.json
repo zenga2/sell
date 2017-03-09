@@ -1,0 +1,490 @@
+{
+   "entry": {
+      "app": "./src/main.js"
+   },
+   "output": {
+      "path": "D:\\DFolder\\sell\\dist",
+      "filename": "static/js/[name].[chunkhash].js",
+      "publicPath": "/",
+      "chunkFilename": "static/js/[id].[chunkhash].js"
+   },
+   "resolve": {
+      "extensions": [
+         ".js",
+         ".vue",
+         ".json"
+      ],
+      "modules": [
+         "D:\\DFolder\\sell\\src",
+         "D:\\DFolder\\sell\\node_modules"
+      ],
+      "alias": {
+         "vue$": "vue/dist/vue.common.js",
+         "src": "D:\\DFolder\\sell\\src",
+         "components": "D:\\DFolder\\sell\\src\\components",
+         "common": "D:\\DFolder\\sell\\src\\common"
+      }
+   },
+   "module": {
+      "rules": [
+         {
+            "test": "/\\.(js|vue)$/",
+            "loader": "eslint-loader",
+            "enforce": "pre",
+            "include": [
+               "D:\\DFolder\\sell\\src",
+               "D:\\DFolder\\sell\\test"
+            ],
+            "options": {}
+         },
+         {
+            "test": "/\\.vue$/",
+            "loader": "vue-loader",
+            "options": {
+               "loaders": {
+                  "css": [
+                     {
+                        "loader": "D:\\DFolder\\sell\\node_modules\\extract-text-webpack-plugin\\loader.js",
+                        "options": {
+                           "omit": 1,
+                           "remove": true
+                        }
+                     },
+                     {
+                        "loader": "vue-style-loader"
+                     },
+                     {
+                        "loader": "css-loader",
+                        "options": {
+                           "minimize": true,
+                           "sourceMap": true
+                        }
+                     }
+                  ],
+                  "postcss": [
+                     {
+                        "loader": "D:\\DFolder\\sell\\node_modules\\extract-text-webpack-plugin\\loader.js",
+                        "options": {
+                           "omit": 1,
+                           "remove": true
+                        }
+                     },
+                     {
+                        "loader": "vue-style-loader"
+                     },
+                     {
+                        "loader": "css-loader",
+                        "options": {
+                           "minimize": true,
+                           "sourceMap": true
+                        }
+                     }
+                  ],
+                  "less": [
+                     {
+                        "loader": "D:\\DFolder\\sell\\node_modules\\extract-text-webpack-plugin\\loader.js",
+                        "options": {
+                           "omit": 1,
+                           "remove": true
+                        }
+                     },
+                     {
+                        "loader": "vue-style-loader"
+                     },
+                     {
+                        "loader": "css-loader",
+                        "options": {
+                           "minimize": true,
+                           "sourceMap": true
+                        }
+                     },
+                     {
+                        "loader": "less-loader",
+                        "options": {
+                           "sourceMap": true
+                        }
+                     }
+                  ],
+                  "sass": [
+                     {
+                        "loader": "D:\\DFolder\\sell\\node_modules\\extract-text-webpack-plugin\\loader.js",
+                        "options": {
+                           "omit": 1,
+                           "remove": true
+                        }
+                     },
+                     {
+                        "loader": "vue-style-loader"
+                     },
+                     {
+                        "loader": "css-loader",
+                        "options": {
+                           "minimize": true,
+                           "sourceMap": true
+                        }
+                     },
+                     {
+                        "loader": "sass-loader",
+                        "options": {
+                           "indentedSyntax": true,
+                           "sourceMap": true
+                        }
+                     }
+                  ],
+                  "scss": [
+                     {
+                        "loader": "D:\\DFolder\\sell\\node_modules\\extract-text-webpack-plugin\\loader.js",
+                        "options": {
+                           "omit": 1,
+                           "remove": true
+                        }
+                     },
+                     {
+                        "loader": "vue-style-loader"
+                     },
+                     {
+                        "loader": "css-loader",
+                        "options": {
+                           "minimize": true,
+                           "sourceMap": true
+                        }
+                     },
+                     {
+                        "loader": "sass-loader",
+                        "options": {
+                           "sourceMap": true
+                        }
+                     }
+                  ],
+                  "stylus": [
+                     {
+                        "loader": "D:\\DFolder\\sell\\node_modules\\extract-text-webpack-plugin\\loader.js",
+                        "options": {
+                           "omit": 1,
+                           "remove": true
+                        }
+                     },
+                     {
+                        "loader": "vue-style-loader"
+                     },
+                     {
+                        "loader": "css-loader",
+                        "options": {
+                           "minimize": true,
+                           "sourceMap": true
+                        }
+                     },
+                     {
+                        "loader": "stylus-loader",
+                        "options": {
+                           "sourceMap": true
+                        }
+                     }
+                  ],
+                  "styl": [
+                     {
+                        "loader": "D:\\DFolder\\sell\\node_modules\\extract-text-webpack-plugin\\loader.js",
+                        "options": {
+                           "omit": 1,
+                           "remove": true
+                        }
+                     },
+                     {
+                        "loader": "vue-style-loader"
+                     },
+                     {
+                        "loader": "css-loader",
+                        "options": {
+                           "minimize": true,
+                           "sourceMap": true
+                        }
+                     },
+                     {
+                        "loader": "stylus-loader",
+                        "options": {
+                           "sourceMap": true
+                        }
+                     }
+                  ]
+               },
+               "postcss": [
+                  null
+               ]
+            }
+         },
+         {
+            "test": "/\\.js$/",
+            "loader": "babel-loader",
+            "include": [
+               "D:\\DFolder\\sell\\src",
+               "D:\\DFolder\\sell\\test"
+            ]
+         },
+         {
+            "test": "/\\.(png|jpe?g|gif|svg)(\\?.*)?$/",
+            "loader": "url-loader",
+            "query": {
+               "limit": 10000,
+               "name": "static/img/[name].[hash:7].[ext]"
+            }
+         },
+         {
+            "test": "/\\.(woff2?|eot|ttf|otf)(\\?.*)?$/",
+            "loader": "url-loader",
+            "query": {
+               "limit": 10000,
+               "name": "static/fonts/[name].[hash:7].[ext]"
+            }
+         },
+         {
+            "test": "/\\.css$/",
+            "use": [
+               {
+                  "loader": "D:\\DFolder\\sell\\node_modules\\extract-text-webpack-plugin\\loader.js",
+                  "options": {
+                     "omit": 1,
+                     "remove": true
+                  }
+               },
+               {
+                  "loader": "vue-style-loader"
+               },
+               {
+                  "loader": "css-loader",
+                  "options": {
+                     "minimize": true,
+                     "sourceMap": true
+                  }
+               }
+            ]
+         },
+         {
+            "test": "/\\.postcss$/",
+            "use": [
+               {
+                  "loader": "D:\\DFolder\\sell\\node_modules\\extract-text-webpack-plugin\\loader.js",
+                  "options": {
+                     "omit": 1,
+                     "remove": true
+                  }
+               },
+               {
+                  "loader": "vue-style-loader"
+               },
+               {
+                  "loader": "css-loader",
+                  "options": {
+                     "minimize": true,
+                     "sourceMap": true
+                  }
+               }
+            ]
+         },
+         {
+            "test": "/\\.less$/",
+            "use": [
+               {
+                  "loader": "D:\\DFolder\\sell\\node_modules\\extract-text-webpack-plugin\\loader.js",
+                  "options": {
+                     "omit": 1,
+                     "remove": true
+                  }
+               },
+               {
+                  "loader": "vue-style-loader"
+               },
+               {
+                  "loader": "css-loader",
+                  "options": {
+                     "minimize": true,
+                     "sourceMap": true
+                  }
+               },
+               {
+                  "loader": "less-loader",
+                  "options": {
+                     "sourceMap": true
+                  }
+               }
+            ]
+         },
+         {
+            "test": "/\\.sass$/",
+            "use": [
+               {
+                  "loader": "D:\\DFolder\\sell\\node_modules\\extract-text-webpack-plugin\\loader.js",
+                  "options": {
+                     "omit": 1,
+                     "remove": true
+                  }
+               },
+               {
+                  "loader": "vue-style-loader"
+               },
+               {
+                  "loader": "css-loader",
+                  "options": {
+                     "minimize": true,
+                     "sourceMap": true
+                  }
+               },
+               {
+                  "loader": "sass-loader",
+                  "options": {
+                     "indentedSyntax": true,
+                     "sourceMap": true
+                  }
+               }
+            ]
+         },
+         {
+            "test": "/\\.scss$/",
+            "use": [
+               {
+                  "loader": "D:\\DFolder\\sell\\node_modules\\extract-text-webpack-plugin\\loader.js",
+                  "options": {
+                     "omit": 1,
+                     "remove": true
+                  }
+               },
+               {
+                  "loader": "vue-style-loader"
+               },
+               {
+                  "loader": "css-loader",
+                  "options": {
+                     "minimize": true,
+                     "sourceMap": true
+                  }
+               },
+               {
+                  "loader": "sass-loader",
+                  "options": {
+                     "sourceMap": true
+                  }
+               }
+            ]
+         },
+         {
+            "test": "/\\.stylus$/",
+            "use": [
+               {
+                  "loader": "D:\\DFolder\\sell\\node_modules\\extract-text-webpack-plugin\\loader.js",
+                  "options": {
+                     "omit": 1,
+                     "remove": true
+                  }
+               },
+               {
+                  "loader": "vue-style-loader"
+               },
+               {
+                  "loader": "css-loader",
+                  "options": {
+                     "minimize": true,
+                     "sourceMap": true
+                  }
+               },
+               {
+                  "loader": "stylus-loader",
+                  "options": {
+                     "sourceMap": true
+                  }
+               }
+            ]
+         },
+         {
+            "test": "/\\.styl$/",
+            "use": [
+               {
+                  "loader": "D:\\DFolder\\sell\\node_modules\\extract-text-webpack-plugin\\loader.js",
+                  "options": {
+                     "omit": 1,
+                     "remove": true
+                  }
+               },
+               {
+                  "loader": "vue-style-loader"
+               },
+               {
+                  "loader": "css-loader",
+                  "options": {
+                     "minimize": true,
+                     "sourceMap": true
+                  }
+               },
+               {
+                  "loader": "stylus-loader",
+                  "options": {
+                     "sourceMap": true
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   "devtool": "#source-map",
+   "plugins": [
+      {
+         "definitions": {
+            "process.env": {
+               "NODE_ENV": "\"production\""
+            }
+         }
+      },
+      {
+         "options": {
+            "compress": {
+               "warnings": false
+            },
+            "sourceMap": true
+         }
+      },
+      {
+         "filename": "static/css/[name].[contenthash].css",
+         "id": 1,
+         "options": {}
+      },
+      {
+         "options": {
+            "assetNameRegExp": {},
+            "cssProcessorOptions": {},
+            "canPrint": true
+         }
+      },
+      {
+         "options": {
+            "template": "index.html",
+            "filename": "D:\\DFolder\\sell\\dist\\index.html",
+            "hash": false,
+            "inject": true,
+            "compile": true,
+            "favicon": false,
+            "minify": {
+               "removeComments": true,
+               "collapseWhitespace": true,
+               "removeAttributeQuotes": true
+            },
+            "cache": true,
+            "showErrors": true,
+            "chunks": "all",
+            "excludeChunks": [],
+            "title": "Webpack App",
+            "xhtml": false,
+            "chunksSortMode": "dependency"
+         }
+      },
+      {
+         "chunkNames": "vendor",
+         "ident": "D:\\DFolder\\sell\\node_modules\\webpack\\lib\\optimize\\CommonsChunkPlugin.js0"
+      },
+      {
+         "chunkNames": "manifest",
+         "selectedChunks": [
+            "vendor"
+         ],
+         "ident": "D:\\DFolder\\sell\\node_modules\\webpack\\lib\\optimize\\CommonsChunkPlugin.js1"
+      },
+      {}
+   ]
+}

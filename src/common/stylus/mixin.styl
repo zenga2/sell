@@ -1,0 +1,46 @@
+border-1px($color)
+  position: relative
+  &:after
+    display: block
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    border-top: 1px solid $color
+    content: ''
+
+border-none()
+  &:after
+    display: none
+
+scaleBorder($minDPR, $scale, $className, $pd)
+  @media (-webkit-min-device-pixel-ratio: $minDPR), (min-device-pixel-ratio: $minDPR)
+    .{$className}
+      &::{$pd}
+        transform: $scale
+
+scaleBottomBorder($className)
+  scaleBorder(1.5, scaleY(0.7), $className, after)
+  scaleBorder(2, scaleY(0.5), $className, after)
+  scaleBorder(3, scaleY(0.33333333333333), $className, after)
+
+bg-image($url)
+  background-image: url($url + "@2x.png")
+  @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3)
+    background-image: url($url + "@3x.png")
+
+v-transition($name, $activeCss, $initCss)
+  $enter = $activeCss.enter ? $activeCss.enter:$activeCss
+  $leave = $activeCss.leave ? $activeCss.leave:$activeCss
+  &.{$name}-enter-active
+    {$enter}
+  &.{$name}-leave-active
+    {$leave}
+  &.{$name}-enter, &.{$name}-leave-active
+    {$initCss}
+
+v-mediaDPR(cssMap)
+  for dpr, $css in cssMap
+    @media (-webkit-min-device-pixel-ratio: dpr), (min-device-pixel-ratio: dpr)
+      &
+        {$css}
